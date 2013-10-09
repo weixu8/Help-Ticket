@@ -1,0 +1,18 @@
+#center{
+text-align:
+center;
+background-color:
+#7F8C8D;
+border-radius: 10px;
+width: 25%;
+margin-left: 37%;
+margin-top: 2.5%;
+}
+#center2{
+text-align:
+center;
+}
+body {
+background-image:
+    url('bg.jpg');
+}

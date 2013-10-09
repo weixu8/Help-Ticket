@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>File a Help Ticket</title>
+		<link rel="stylesheet" type="text/css" href="flat-ui.css">
+		<link rel="stylesheet" type="text/css" href="custom.css">
+                <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+                <script>
+                        function updateCountdown() {
+                                // 140 is the max message length
+                                var remaining = 140 - jQuery('.message').val().length;
+                                jQuery('.countdown').text(remaining + ' characters remaining.');
+                        }
+                        jQuery(document).ready(function($) {
+                                updateCountdown();
+                                $('.message').change(updateCountdown);
+                                $('.message').keyup(updateCountdown);
+                        });
+                </script>
+	</head>
+	<body>
+		<div id="center2">
+			<h1>File a Help Ticket</h1>
+		</div>
+		<div id="center">
+			<form name="info" action="submit.php" method="POST">
+				Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name=name class="input-sm">
+				<br>
+				Question: <input type="textarea" name=question class="input-sm message">
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="countdown"></span>
+				<br>
+				&nbsp;<input type="submit" value="Submit Question" class="btn">
+			</form>
+			<br>
+			<a class="text-danger"  href="list.php">See the submitted Help Tickets</a>
+			<br>
+			<h5>Made by Denton Poss</h5>
+			
+			Rules:
+			<ol>
+				<li>Post only relevant and appropirate questions</li>
+				<li>Use your real name</li>
+				<li>If you post a response, make sure you answer the question correctly</li>
+				<li>Do not post questions such as 'Help Me', but instead, describe your problem</li>
+				<li>Do not post in all capital letters</li>
+			</ol>
+		</div>
+	</body>
+</html>
