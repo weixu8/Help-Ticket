@@ -41,6 +41,11 @@
 
        exec("cp data/* .");
        exec("rm data/ -Rf");
+       exec("rm install.html");
+
+       echo "<a href=index.html>Install complete, click here to return</a>";
+
+       exec("rm submitinstall.php");
 
 ?>
 
