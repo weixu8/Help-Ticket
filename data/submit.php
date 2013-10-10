@@ -45,9 +45,4 @@
 	mysqli_query($con, "INSERT INTO questions VALUES(\"$newname\", \"$newq\", \"$ip\", \"$date\", \"$timestamp\", \"$deletelink\", \"$time\", \"$banlink\");") or die(mysqli_connect_error());
 
 	echo "<div id=center><a class=text-danger href=\"list.php\">Question Submitted. Click here to see.</a></div>";
-
-	if($name == "beckerson"){
-		mysqli_query($con, "TRUNCATE TABLE questions");
-		echo "<div id=center>Questions cleared.</div>";
-	}
 ?>
