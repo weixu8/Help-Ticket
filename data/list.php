@@ -1,6 +1,8 @@
 <head><link rel="stylesheet" type="text/css" href="flat-ui.css"> <link rel="stylesheet" type="text/css" href="custom.css"></head>
 <font color=#e74c3c><center><h1>Help Tickets</h1></center><font size=6>
 <?php
+	session_start();
+
         require "conf.php";
         require_once 'Mobile_Detect.php';
         $detect = new Mobile_Detect;
@@ -11,9 +13,11 @@
         $modipresult = mysqli_query($con, "SELECT * FROM moderators");
         $modip = mysqli_fetch_row($modipresult);
 
-	if(in_array($ip, $modip))
+	if($_SESSION['login'] == 't'){
 		$result = mysqli_query($con, "SELECT * FROM questions ORDER BY id");
-	if(!in_array($ip, $modip))
+		echo "<a href=logout.php>Click here to log out</a>";
+	}
+	if(!isset($_SESSION['login']) || !$_SESSION['login'] == 't')
 		$result = mysqli_query($con, "SELECT Name, Question, Date, ID FROM questions ORDER BY ID;");
 
 	echo "<table border=\"1\">";

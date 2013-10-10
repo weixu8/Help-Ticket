@@ -4,6 +4,7 @@
        $username = $_POST['sqluser'];
        $server = $_POST['sqlserver'];
        $db = $_POST['sqldb'];
+       $adminpass = $_POST['adminpass'];
 
 
        $con = mysqli_connect($server, $username, $pass, $db);
@@ -24,17 +25,14 @@
   `UnbanLink` varchar(2500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1");
 
-       mysqli_query($con, "CREATE TABLE `moderators` (
-  `IP` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1");
-
-       mysqli_query($con, "");
+       $adminpass = md5($adminpass);
 
        $data = "<?php //Auto generated MySQL config file.\n
         define(\"SQLUSER\", \"$username\");\n
         define(\"SQLPASS\", \"$pass\");\n
         define(\"SQLSERVER\", \"$server\");\n
-        define(\"SQLDB\", \"$db\");\n?>";
+        define(\"SQLDB\", \"$db\");\n
+	define(\"ADMINPASS\", \"$adminpass\")?>";
 
        file_put_contents("data/conf.php", $data);
 
