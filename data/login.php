@@ -12,7 +12,7 @@
 		$_SESSION['login'] = "t";
 		echo "Logged in";
 	}else{
-		die("Incorrect password");
+		die("Incorrect password<br><a href=index.html>Return to index.</a>");
 	}
 
 	echo "<br><a href=index.html>Return to index.</a>";

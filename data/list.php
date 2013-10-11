@@ -1,4 +1,4 @@
-<head><link rel="stylesheet" type="text/css" href="flat-ui.css"> <link rel="stylesheet" type="text/css" href="custom.css"></head>
+<head><link rel="stylesheet" type="text/css" href="custom.css"></head>
 <font color=#e74c3c><center><h1>Help Tickets</h1></center><font size=6>
 <?php
 	session_start();
