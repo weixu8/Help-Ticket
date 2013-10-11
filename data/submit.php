@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" href="flat-ui.css">
 <link rel="stylesheet" type="text/css" href="custom.css">
 <?php
 
