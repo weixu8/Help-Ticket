@@ -21,9 +21,6 @@
 	$newq = htmlentities($q);
 	$newname = htmlentities($name);
 
-	if(empty($newq) && $newname !== "beckerson")
-		die("<div id=center>Please enter a question.</div>");
-
 	if(empty($newname))
 		die("<div id=center>Please enter a name.</div>");
 
